@@ -144,7 +144,10 @@ public class OrderRepository {
         int hours = time/60;
         int min = time%60;
 
-        String lastDeliveryTime = hours + ":"+min;
+        String h = hours < 10 ? "0"+hours : ""+hours;
+        String m = min < 10 ? "0"+min : ""+min;
+
+        String lastDeliveryTime = h+":"+m;
 
         return lastDeliveryTime;
     }
